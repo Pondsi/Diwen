@@ -1,6 +1,6 @@
 # dsh-diwen — Diwen (迪文) Concept Coordinate System
 
-> Release **6.16.4** — published to npm as `diwen@6.16.4`. The registry remains authoritative: `npm view diwen version`.
+> Published to npm as **`diwen`**. The registry is authoritative — check with `npm view diwen version`.
 >
 > 中文概要见 [说明.md](说明.md)。
 
@@ -71,7 +71,7 @@ Axiom ① (Diwen → unique Chinese definition) is 100% deterministic. When no c
 
 ## Quick start
 
-This repo is Diwen's **open-core public distribution**: open loader shell + closed core (minified bundle) + encrypted concept data (AES-256-GCM). `npm install diwen` pulls the published version — currently **6.16.4**.
+This repo is Diwen's **open-core public distribution**: open loader shell + closed core (minified bundle) + encrypted concept data (AES-256-GCM). `npm install diwen` pulls whatever version the registry currently publishes.
 
 ### npm package
 ```bash
