@@ -1,0 +1,51 @@
+迪文（Diwen）开源许可 —— 署名即用
+Copyright (c) Pondsi
+
+你可以自由使用、修改、组合、再分发本项目及其任何部分（包括源码、数据、文档与代码片段），
+用于个人或商业目的，无需付费、无需申请、无需告知作者。
+
+唯一条件：保留作者署名。
+
+具体而言，凡属下列情形，均须以清晰可见的方式注明「本项目基于迪文（Diwen），作者 Pondsi」：
+
+1. 直接使用本项目或其数据、衍生数据；
+2. 修改、扩展、裁剪、重构后使用或分发（含闭源产品与服务）；
+3. 在任何产品、服务、论文、演示、教程中引用本项目或其中代码片段、数据结构、概念表；
+4. 再分发本项目或其任何部分（含修改版、打包版、镜像、镜像站）。
+
+署名方式（任选其一即可，须能被使用者看到）：
+- 在 README / 关于页面 / 帮助信息 / 项目描述中写明「Powered by 迪文 (Diwen) — Pondsi」；
+- 或保留本 LICENSE 文件与作者署名信息（如代码中的 DIWEN_AUTHOR 常量）不被移除。
+
+本许可不提供任何担保，作者不对使用后果负责。
+
+---
+
+Diwen Open License — Attribution Required, Nothing Else
+Copyright (c) Pondsi
+
+You may use, modify, combine, and redistribute this project and any part of it
+(source code, data, documents, and code snippets), for personal or commercial
+purposes, at no cost, without application, without notifying the author.
+
+The only condition is attribution: keep the author's name.
+
+Specifically, in each of the following cases you must clearly state
+"Based on Diwen (迪文) by Pondsi":
+
+1. direct use of the project, its data, or derived data;
+2. use or distribution after modification, extension, trimming, or refactoring
+   (including closed-source products and services);
+3. reference to the project, its code snippets, data structures, or concept
+   tables in any product, service, paper, presentation, or tutorial;
+4. redistribution of the project or any part of it (modified builds, packages,
+   mirrors).
+
+Attribution may be satisfied by either:
+- a visible notice such as "Powered by Diwen — Pondsi" in your README, about page,
+  help output, or project description; or
+- keeping this LICENSE file and the author attribution (e.g. the DIWEN_AUTHOR
+  constant in code) intact.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. THE AUTHOR IS NOT
+LIABLE FOR ANY DAMAGES ARISING FROM ITS USE.
