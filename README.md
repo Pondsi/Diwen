@@ -1,6 +1,6 @@
 # dsh-diwen — Diwen (迪文) Concept Coordinate System
 
-> Release **6.15.2** — published to npm as `diwen@6.15.2` (registry API verified; tarball install smoke-tested). The registry remains authoritative: `npm view diwen version`.
+> Release **6.16.4** — published to npm as `diwen@6.16.4`. The registry remains authoritative: `npm view diwen version`.
 >
 > 中文概要见 [说明.md](说明.md)。
 
@@ -42,7 +42,7 @@ Benefits are **measured**, not advertised: token counts use real `cl100k_base` B
 
 ## Status: Chinese is deliverable (zh + zh-TW)
 
-**Scale**: **218,419 concepts** / 194 fields; surface packs **zh 218,512 forms** and **zh-TW 218,595 forms**, each covering **all 218,419 concepts** (every concept reachable; simplified/traditional packs agree on every shared form). Frozen gold: **2889 sentences / 1024 senses**; frozen holdout 116. Private Diwen extension supported (user concepts, id ≥ 699051).
+**Scale**: **218,529 concepts** / 194 fields, of which **3,200** carry a renderable glyph (visual band `s3a ≤ 127`, fully filled) and 215,329 are glyphless, sharing the default glyph. Surface packs **zh (simplified)** and **zh-TW (traditional)** both cover every concept (each concept reachable; the two packs agree on every shared form). Frozen gold: **2889 sentences / 1024 senses**; frozen holdout 116. Private Diwen extension supported (user concepts, id ≥ 699051).
 
 **Evaluation, stated at its proper strength**:
 
@@ -71,7 +71,7 @@ Axiom ① (Diwen → unique Chinese definition) is 100% deterministic. When no c
 
 ## Quick start
 
-This repo is Diwen's **open-core public distribution**: open loader shell + closed core (minified bundle) + encrypted concept data (AES-256-GCM). `npm install diwen` pulls the published version — currently **6.15.2**.
+This repo is Diwen's **open-core public distribution**: open loader shell + closed core (minified bundle) + encrypted concept data (AES-256-GCM). `npm install diwen` pulls the published version — currently **6.16.4**.
 
 ### npm package
 ```bash
