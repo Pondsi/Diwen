@@ -42,7 +42,7 @@ Benefits are **measured**, not advertised: token counts use real `cl100k_base` B
 
 ## Status: Chinese is deliverable (zh + zh-TW)
 
-**Scale**: **218,529 concepts** / 194 fields, of which **3,200** carry a renderable glyph (visual band `s3a ≤ 127`, fully filled) and 215,329 are glyphless, sharing the default glyph. Surface packs **zh (simplified)** and **zh-TW (traditional)** both cover every concept (each concept reachable; the two packs agree on every shared form). Frozen gold: **2889 sentences / 1024 senses**; frozen holdout 116. Private Diwen extension supported (user concepts, id ≥ 699051).
+**Scale**: roughly **218k concepts** across **194** semantic fields, of which **3,200** carry a renderable glyph (visual band `s3a ≤ 127`, fully filled) and the rest are glyphless, sharing the default glyph (exact counts ship inside the npm package). Surface packs **zh (simplified)** and **zh-TW (traditional)** both cover every concept (each concept reachable; the two packs agree on every shared form). Frozen gold: **2889 sentences / 1024 senses**; frozen holdout 116. Private Diwen extension supported (user concepts, id ≥ 699051).
 
 **Evaluation, stated at its proper strength**:
 
