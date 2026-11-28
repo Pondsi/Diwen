@@ -22,7 +22,7 @@ Natural language is ambiguous and drifts; Diwen anchors meaning to discrete conc
 - **Full-lexicon curation completed**: 264,723 source words curated; concept inventory grew from 64,166 → **218,419** across **194** semantic fields. All growth enters the **bulk / `semanticApproval=false`** tier — *passing mechanical validation ≠ semantically approved*.
 - **Matcher defect fixed (greedy consumption without backtracking)**: newly added non-word surfaces (e.g. 不退/我身/小女) could consume text, be dropped by the segmentation filter afterwards, and leave the covered word unreachable (worst case: a whole sentence mapping to nothing). Fixed by moving the compound/boundary checks into candidate selection so a rejected candidate falls back to shorter ones. Compound-level accuracy **0.9369 → 0.9660** (same original gold).
 - **Simplified/Traditional surface ownership fixed**: 22 duplicate concepts created from variant spellings (進入/进入, 歡呼/欢呼, 以微知著/以微知着 …) were removed (Axiom ⑤: spelling variants do not create new concepts); 10 regionally distinct words (社群/社区, 影片/视频, 月台/站台 …) keep two concepts, with surface forms owned by the word itself. Regression invariants now enforce *“a newer concept may never take over an existing form”* and *“simplified/traditional packs must agree”*.
-- **Field gate tightened** from `max(100000, 70%)` to `max(2000, 45%)` (documented re-specification, not a silent loosening). `abstract1` (the explicit *unverified field* pool) is **40.5%**.
+- **Field gate tightened** from `max(100000, 70%)` to `max(2000, 45%)` (documented re-specification, not a silent loosening). `abstract1` (the explicit *unverified field* pool) was **40.5%** then; **cleared to zero as of round224**.
 - **Field-provenance tiers are published** (see Status) instead of a single “unverified” number.
 
 ## Use cases — and the measured benefit in each
@@ -55,7 +55,28 @@ Benefits are **measured**, not advertised: token counts use real `cl100k_base` B
 | Local decision models (d3 / clef-flash / clef) | 0.9267 / 0.9467 / 0.96 | same subset, `--ask --choice` |
 | Dual-source confirmation | 82.4% | curated words ∩ chinese-xinhua dictionary |
 
-**Field-tag provenance (published instead of a single “unverified” figure)** — `abstract1` pool = **88,515 (40.5%)** of the inventory:
+**Current data state (round224 — supersedes older figures elsewhere in this file)**:
+
+| Quantity | Value | Note |
+|---|---|---|
+| Concepts | 218,365 | 193 semantic fields; `abstract1` is empty |
+| Verified content senses | 214,461 | **99.32%** of all content senses |
+| Draft-layer senses | 1,480 | kept queryable, `usableAsFact: false` |
+| Withdrawn (archived) senses | 451 | invalid/adjudicated-out |
+
+**Definition-layer quality**: single-sense definition error rate **4.48%**, 95% CI **[3.33%, 5.63%]** (n=1,250 blind-adjudicated); polysemous sibling-duplicate rate 5.17% (n=484), of which 24 deterministic pairs were merged.
+
+**Field-tag provenance — every concept carries a calibrated precision figure** in `roots[].field_note`:
+
+| Precision band | Share | Source tiers |
+|---|---|---|
+| ≥85% | **88.7%** | curated 100% · `inferred_nb_hi` 92.1% · `inferred_nb_v1` 85.5% · three-source 90.9% · def∩xinhua+margin 89.5% · `mid` confirm 87.1% |
+| 75–85% | 5.1% | dual-source 85.0% · def∩struct 82.3% · lookup-confirm 79.5% · `std` 77.0% |
+| <75% | 6.2% | `lo` re-predicted 65.3% · `mid` retained 57.4% |
+
+No uncalibrated weak tier remains. The former `inferred_nb_lo/mid/std` pool (34,024 concepts at 39.4%/57.4%/77.0%) was re-adjudicated with a four-source ensemble; a 150-case blind spot-check measured 66.7%±7.5 on that pool, so adoption was made **per tier from measured evidence** — `lo` fully re-predicted (39.4%→65.3%), `mid` confirmed only where the ensemble agreed (87.1%), `std` left untouched (77.0% beat every new rule). The ≥85% share went **84.4% → 88.7%**.
+
+**Field-tag provenance (method history)** — `abstract1` pool = **88,515 (40.5%)** at the time this table was written:
 
 | Tier | Count | Meaning |
 |---|---|---|
